@@ -14,8 +14,8 @@ function Race({ match }) {
     const fetchRace = async () => {
       setIsLoading(true);
       try {
-        const race = await fetch(`https://swapi.co/api/species/${match.params.id}/`);
-        const allFilm = await fetch('https://swapi.co/api/films/');
+        const race = await fetch(`https://swapi.dev/api/species/${match.params.id}/`);
+        const allFilm = await fetch('https://swapi.dev/api/films/');
         const raceData = await race.json();
         const sevenFilms = await allFilm.json();
         setRace(raceData);
@@ -78,7 +78,7 @@ function Race({ match }) {
             </Box>
             <div>
               <Heading level="3">Films {name} appear in </Heading>
-              {filmFinder(race.films).map((film, i) => (<Text size="medium" weight="bold" key={i}>{film.title}</Text>))}
+              {filmFinder(race.films).map((film, i) => (<Text style={{ display: "block" }} size="medium" weight="bold" key={i}>{film.title}</Text>))}
             </div>
           </Box>
         )

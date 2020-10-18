@@ -12,9 +12,7 @@ function Species() {
 
     const getSpecies = () => {
       const urls = [
-        'https://swapi.co/api/species/',
-        'https://swapi.co/api/species/?page=2',
-        'https://swapi.co/api/species/?pge=3'
+        'https://swapi.dev/api/species/'
       ]
       return Promise.all(
         urls.map(url =>

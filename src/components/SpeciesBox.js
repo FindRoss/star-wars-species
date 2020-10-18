@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 
 function SpeciesBox({ race, i }) {
 
-  const numberFromUrl = (speciesUrl) => {
-    let getIdFromUrl = speciesUrl.replace("https://swapi.co/api/species", "");
+  const numberFromUrl = (raceUrl) => {
+    let getIdFromUrl = raceUrl.replace("http://swapi.dev/api/species/", "");
+    console.log(getIdFromUrl);
     return getIdFromUrl;
   }
 
@@ -34,7 +35,7 @@ function SpeciesBox({ race, i }) {
         flex="grow"
         pad="large"
         margin="xsmall" >
-        <Link to={`/species${numberFromUrl(race.url)}`}>
+        <Link to={`/species/${numberFromUrl(race.url)}`}>
           <Heading level="4" color="customAnchorColor">{race.name}</Heading>
         </Link>
       </Box>
