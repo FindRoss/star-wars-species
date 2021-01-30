@@ -1,18 +1,40 @@
-body, html{
-  margin: 0;
-  padding: 0;
+html,
+body,
+#root,
+.App,
+.wrapper {
+  height: 100%;
 }
 
-html, body, #root, #app, #app>div {
-  height: 100%
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  top: -1000px;
 }
 
-a {
-  text-decoration: none;
+.label {
+  background: #000;
+  width: 60px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  position: relative;
+  padding: 0.1rem;
+
+  cursor: pointer;
 }
 
-.sws-container {
-  max-width: 1080px; 
-  width: 90%; 
-  margin: 50px auto;
+.ball {
+  position: absolute;
+  background: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(27px);
 }
